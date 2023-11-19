@@ -1,0 +1,1 @@
+﻿WixSharpSimpleApp1's 1.txt
