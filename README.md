@@ -1,4 +1,4 @@
-# wix-packages 1.2
+# wix-packages 1.3
 
 ## Scenarios
 - Creating Shortcuts
@@ -11,6 +11,7 @@
 	- setup.exe install theconsole
 	- setup.exe install simpleapp
 	- setup.exe install simpleapp runtime
+- User/System Registry scenarios
 
 ## Features
 - MSI + Setup app
