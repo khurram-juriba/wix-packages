@@ -14,10 +14,26 @@ namespace TheConsoleApp
             string appVersion = f.ProductVersion;
             Console.WriteLine($"{ApplicationConstants.PRODUCT} v{appVersion}");
 
-            InstallationScenarios.Verify(s => Console.WriteLine(s),
-                ApplicationConstants.COMPANY, ApplicationConstants.PRODUCT);
+            while(true)
+            {
+                Console.Write("Choose action [1] Verify [2] Write Registries [3] Read Registries or [q] to quit\t");
+                var input = Console.ReadLine();
 
-            Console.WriteLine("Press enter to continue");
+                if (input == "1")
+                    InstallationScenarios.Verify(s => Console.WriteLine(s),
+                        ApplicationConstants.COMPANY, ApplicationConstants.PRODUCT);
+                else if (input == "2")
+                    RegistryScenarios.WriteRegistries(s => Console.WriteLine(s),
+                        ApplicationConstants.COMPANY, ApplicationConstants.PRODUCT);
+                else if (input == "3")
+                    RegistryScenarios.ReadRegistries(s => Console.WriteLine(s),
+                        ApplicationConstants.COMPANY, ApplicationConstants.PRODUCT);
+                else if (input == "q")
+                    break;
+            }
+
+
+            Console.WriteLine("Press enter to exit");
             Console.ReadLine();
         }
     }

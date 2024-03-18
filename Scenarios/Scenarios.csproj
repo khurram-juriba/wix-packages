@@ -51,6 +51,7 @@
     <Compile Include="Helpers\SymbolicLinkHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="InstallationScenarios.cs" />
+    <Compile Include="RegistryScenarios.cs" />
     <Compile Include="ScheduledTaskScenarios.cs" />
     <Compile Include="EnvironmentVariableScenarios.cs" />
     <Compile Include="SymbolicLinkScenarios.cs" />

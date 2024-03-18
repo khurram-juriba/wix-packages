@@ -14,6 +14,7 @@
  *                      
  * 1.2                  Environment Variable
  *                      SimpleApps
+ * 1.3      2024-3-16   User/System Registry scenarios
  *
  * Registering / Unregistering COM
  * Setup running MSI scenario

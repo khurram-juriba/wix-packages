@@ -40,6 +40,8 @@
             this.backgroundVerificationConsole = new System.ComponentModel.BackgroundWorker();
             this.backgroundUninstallationConsole = new System.ComponentModel.BackgroundWorker();
             this.backgroundInstallationSimpleApp = new System.ComponentModel.BackgroundWorker();
+            this.buttonRegistriesWrite = new System.Windows.Forms.Button();
+            this.buttonRegistriesReads = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,12 +52,14 @@
             this.textBoxLogs.Multiline = true;
             this.textBoxLogs.Name = "textBoxLogs";
             this.textBoxLogs.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxLogs.Size = new System.Drawing.Size(800, 450);
+            this.textBoxLogs.Size = new System.Drawing.Size(869, 450);
             this.textBoxLogs.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.buttonClose);
+            this.flowLayoutPanel1.Controls.Add(this.buttonRegistriesReads);
+            this.flowLayoutPanel1.Controls.Add(this.buttonRegistriesWrite);
             this.flowLayoutPanel1.Controls.Add(this.buttonVerifyConsole);
             this.flowLayoutPanel1.Controls.Add(this.buttonUninstallConsole);
             this.flowLayoutPanel1.Controls.Add(this.buttonInstallConsole);
@@ -66,13 +70,13 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 397);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 53);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(869, 53);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // buttonClose
             // 
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonClose.Location = new System.Drawing.Point(722, 3);
+            this.buttonClose.Location = new System.Drawing.Point(791, 3);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 24);
             this.buttonClose.TabIndex = 0;
@@ -83,7 +87,7 @@
             // buttonVerifyConsole
             // 
             this.buttonVerifyConsole.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonVerifyConsole.Location = new System.Drawing.Point(604, 3);
+            this.buttonVerifyConsole.Location = new System.Drawing.Point(437, 3);
             this.buttonVerifyConsole.Name = "buttonVerifyConsole";
             this.buttonVerifyConsole.Size = new System.Drawing.Size(112, 24);
             this.buttonVerifyConsole.TabIndex = 1;
@@ -94,7 +98,7 @@
             // buttonUninstallConsole
             // 
             this.buttonUninstallConsole.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonUninstallConsole.Location = new System.Drawing.Point(486, 3);
+            this.buttonUninstallConsole.Location = new System.Drawing.Point(319, 3);
             this.buttonUninstallConsole.Name = "buttonUninstallConsole";
             this.buttonUninstallConsole.Size = new System.Drawing.Size(112, 24);
             this.buttonUninstallConsole.TabIndex = 3;
@@ -105,7 +109,7 @@
             // buttonInstallConsole
             // 
             this.buttonInstallConsole.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonInstallConsole.Location = new System.Drawing.Point(368, 3);
+            this.buttonInstallConsole.Location = new System.Drawing.Point(201, 3);
             this.buttonInstallConsole.Name = "buttonInstallConsole";
             this.buttonInstallConsole.Size = new System.Drawing.Size(112, 24);
             this.buttonInstallConsole.TabIndex = 2;
@@ -115,7 +119,7 @@
             // 
             // buttonInstallSimpleApp
             // 
-            this.buttonInstallSimpleApp.Location = new System.Drawing.Point(287, 3);
+            this.buttonInstallSimpleApp.Location = new System.Drawing.Point(120, 3);
             this.buttonInstallSimpleApp.Name = "buttonInstallSimpleApp";
             this.buttonInstallSimpleApp.Size = new System.Drawing.Size(75, 23);
             this.buttonInstallSimpleApp.TabIndex = 4;
@@ -126,18 +130,40 @@
             // checkBoxRuntime
             // 
             this.checkBoxRuntime.AutoSize = true;
-            this.checkBoxRuntime.Location = new System.Drawing.Point(186, 3);
+            this.checkBoxRuntime.Location = new System.Drawing.Point(19, 3);
             this.checkBoxRuntime.Name = "checkBoxRuntime";
             this.checkBoxRuntime.Size = new System.Drawing.Size(95, 17);
             this.checkBoxRuntime.TabIndex = 5;
             this.checkBoxRuntime.Text = "Install Runtime";
             this.checkBoxRuntime.UseVisualStyleBackColor = true;
             // 
+            // buttonRegistriesWrite
+            // 
+            this.buttonRegistriesWrite.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonRegistriesWrite.Location = new System.Drawing.Point(555, 3);
+            this.buttonRegistriesWrite.Name = "buttonRegistriesWrite";
+            this.buttonRegistriesWrite.Size = new System.Drawing.Size(112, 24);
+            this.buttonRegistriesWrite.TabIndex = 6;
+            this.buttonRegistriesWrite.Text = "Write Registries";
+            this.buttonRegistriesWrite.UseVisualStyleBackColor = true;
+            this.buttonRegistriesWrite.Click += new System.EventHandler(this.buttonRegistriesWrite_Click);
+            // 
+            // buttonRegistriesReads
+            // 
+            this.buttonRegistriesReads.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonRegistriesReads.Location = new System.Drawing.Point(673, 3);
+            this.buttonRegistriesReads.Name = "buttonRegistriesReads";
+            this.buttonRegistriesReads.Size = new System.Drawing.Size(112, 24);
+            this.buttonRegistriesReads.TabIndex = 7;
+            this.buttonRegistriesReads.Text = "Read Registries";
+            this.buttonRegistriesReads.UseVisualStyleBackColor = true;
+            this.buttonRegistriesReads.Click += new System.EventHandler(this.buttonRegistriesReads_Click);
+            // 
             // FormSetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(869, 450);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.textBoxLogs);
             this.Name = "FormSetup";
@@ -164,6 +190,8 @@
         private System.Windows.Forms.Button buttonUninstallConsole;
         private System.Windows.Forms.Button buttonInstallSimpleApp;
         private System.Windows.Forms.CheckBox checkBoxRuntime;
+        private System.Windows.Forms.Button buttonRegistriesReads;
+        private System.Windows.Forms.Button buttonRegistriesWrite;
     }
 }
 

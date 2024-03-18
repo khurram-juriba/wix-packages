@@ -32,7 +32,9 @@ namespace SetupApp
                 uiDispatcher.Invoke(() =>
                 {
                     this.buttonClose.Enabled = this.buttonInstallSimpleApp.Enabled =
-                    this.buttonInstallConsole.Enabled = this.buttonUninstallConsole.Enabled = this.buttonVerifyConsole.Enabled = value;
+                    this.buttonInstallConsole.Enabled = this.buttonUninstallConsole.Enabled =
+                    this.buttonRegistriesReads.Enabled = this.buttonRegistriesWrite.Enabled =
+                    this.buttonVerifyConsole.Enabled = value;
                 });
         }
 
@@ -227,6 +229,46 @@ namespace SetupApp
             this.textBoxLogs.Text = string.Empty;
             this.Text = "Installing...";
             this.backgroundInstallationSimpleApp.RunWorkerAsync();
+        }
+
+        private void buttonRegistriesWrite_Click(object sender, EventArgs e)
+        {
+            this.setEnabled(false); // disabling all buttons
+            this.textBoxLogs.Text = string.Empty;
+            this.Text = "Writing Registries...";
+
+            var backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            backgroundWorker.DoWork += (s1, e1) =>
+            {
+                RegistryScenarios.WriteRegistries(this.writeToTextBox,
+                    ApplicationConstants.COMPANY, ApplicationConstants.PRODUCT);
+
+                this.writeToTextBox("Registries are created...");
+                this.setText("Finished...");
+                this.setEnabled(true); // enabling all buttons
+            };
+
+            backgroundWorker.RunWorkerAsync();
+        }
+
+        private void buttonRegistriesReads_Click(object sender, EventArgs e)
+        {
+            this.setEnabled(false); // disabling all buttons
+            this.textBoxLogs.Text = string.Empty;
+            this.Text = "Reading Registries...";
+
+            var backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            backgroundWorker.DoWork += (s1, e1) =>
+            {
+                RegistryScenarios.ReadRegistries(this.writeToTextBox,
+                    ApplicationConstants.COMPANY, ApplicationConstants.PRODUCT);
+
+                this.writeToTextBox("Registries are read...");
+                this.setText("Finished...");
+                this.setEnabled(true); // enabling all buttons
+            };
+
+            backgroundWorker.RunWorkerAsync();
         }
 
         public void HandleArguments(string[] args)
