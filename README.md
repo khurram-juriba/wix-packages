@@ -1,4 +1,4 @@
-# wix-packages 1.3
+# wix-packages 1.3.1
 
 ## Scenarios
 - Creating Shortcuts

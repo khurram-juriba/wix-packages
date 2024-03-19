@@ -16,7 +16,9 @@ namespace TheConsoleApp
 
             while(true)
             {
-                Console.Write("Choose action [1] Verify [2] Write Registries [3] Read Registries or [q] to quit\t");
+                Console.WriteLine("Choose action");
+                Console.WriteLine("[1] Verify [2] Write Registries [3] Read Registries [4] Write to Folders [5] Read from Folders");
+                Console.Write("[q] to quit\t");
                 var input = Console.ReadLine();
 
                 if (input == "1")
@@ -27,6 +29,12 @@ namespace TheConsoleApp
                         ApplicationConstants.COMPANY, ApplicationConstants.PRODUCT);
                 else if (input == "3")
                     RegistryScenarios.ReadRegistries(s => Console.WriteLine(s),
+                        ApplicationConstants.COMPANY, ApplicationConstants.PRODUCT);
+                else if (input == "4")
+                    FileScenarios.WriteToSpecialFolders(s => Console.WriteLine(s),
+                        ApplicationConstants.COMPANY, ApplicationConstants.PRODUCT);
+                else if (input == "5")
+                    FileScenarios.VerifySpecialFolders(s => Console.WriteLine(s),
                         ApplicationConstants.COMPANY, ApplicationConstants.PRODUCT);
                 else if (input == "q")
                     break;
