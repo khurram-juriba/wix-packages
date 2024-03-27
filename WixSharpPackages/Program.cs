@@ -7,7 +7,7 @@ namespace WixSharpPackages
 {
     public static class Program
     {
-        static string versionString = "1.2.0.0";
+        static string versionString = "1.3.0.0";
 
         static void buildMsi(string name, Guid guid, WixEntity[] files)
         {
