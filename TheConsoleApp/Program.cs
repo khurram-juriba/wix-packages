@@ -107,6 +107,7 @@ namespace TheConsoleApp
         static void exitCodes(int code)
         {
             WriteLine($"Exiting with code {code}");
+            Environment.Exit(code);
         }
 
         static void exitCodes()
